@@ -1,17 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -26,85 +18,111 @@ export function LoginForm({
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const supabase = createClient();
+  const handleLogin = async (event: React.FormEvent) => {
+    event.preventDefault();
     setIsLoading(true);
     setError(null);
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+      const response = await fetch("/api/auth/signin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
       });
-      if (error) throw error;
-      // Update this route to redirect to an authenticated route. The user already has an active session.
+
+      const json = (await response.json()) as { error?: string };
+      if (!response.ok) {
+        throw new Error(json?.error || "Credenciais inválidas.");
+      }
+
       router.push("/protected");
-    } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred");
+      router.refresh();
+    } catch (loginError: unknown) {
+      setError(loginError instanceof Error ? loginError.message : "Ocorreu um erro ao entrar.");
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleLogin}>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <Link
-                    href="/auth/forgot-password"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </Link>
-                </div>
-                <Input
-                  id="password"
-                  type="password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Logging in..." : "Login"}
-              </Button>
-            </div>
-            <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
+    <div className={cn("w-full", className)} {...props}>
+      <form
+        onSubmit={handleLogin}
+        className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-[0_14px_38px_rgba(15,23,42,0.08)] md:p-8"
+      >
+        <div className="mb-7">
+          <h2 className="text-3xl font-black tracking-[-0.06em] text-slate-900 md:text-[2.2rem]">
+            Portal de Parceiros
+          </h2>
+          <p className="mt-2 text-base text-slate-600">
+            Catedral Automação — entre com sua conta
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          <div className="grid gap-2">
+            <Label htmlFor="email" className="text-base font-medium text-slate-700">
+              E-mail
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="seu@exemplo.com"
+              autoComplete="email"
+              required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              className="h-12 rounded-xl border-slate-200 bg-slate-50/60 text-base text-slate-900 placeholder:text-slate-400 focus-visible:ring-slate-300"
+            />
+          </div>
+
+          <div className="grid gap-2">
+            <div className="flex items-center justify-between gap-3">
+              <Label htmlFor="password" className="text-base font-medium text-slate-700">
+                Senha
+              </Label>
               <Link
-                href="/auth/sign-up"
-                className="underline underline-offset-4"
+                href="/auth/forgot-password"
+                className="text-sm text-slate-600 underline-offset-4 transition hover:text-slate-900 hover:underline"
               >
-                Sign up
+                Esqueci minha senha
               </Link>
             </div>
-          </form>
-        </CardContent>
-      </Card>
+            <Input
+              id="password"
+              type="password"
+              autoComplete="current-password"
+              required
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              className="h-12 rounded-xl border-slate-200 bg-slate-50/60 text-base text-slate-900 placeholder:text-slate-400 focus-visible:ring-slate-300"
+            />
+          </div>
+        </div>
+
+        {error && (
+          <p className="mt-4 rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600">
+            {error}
+          </p>
+        )}
+
+        <Button
+          type="submit"
+          disabled={isLoading}
+          className="mt-6 h-12 w-full rounded-xl bg-slate-950 text-base font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
+        >
+          {isLoading ? "Entrando..." : "Entrar"}
+        </Button>
+
+        <div className="mt-5 text-center">
+          <Link
+            href="/auth/forgot-password"
+            className="text-base text-slate-700 underline-offset-4 transition hover:text-slate-950 hover:underline"
+          >
+            Esqueci minha senha
+          </Link>
+        </div>
+      </form>
     </div>
   );
 }
