@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { ComoFuncionaOPrograma } from "@/components/dashboard/como-funciona-o-programa";
 
 export default function ComoFuncionaProgramaPage() {
-  return <PlaceholderPage basePath="/portal" title="Como Funciona o Programa" />;
+  return <ComoFuncionaOPrograma basePath="/portal" />;
 }

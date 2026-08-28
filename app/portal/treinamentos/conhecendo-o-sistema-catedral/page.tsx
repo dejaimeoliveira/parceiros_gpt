@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { ConhecendoOSistemaCatedral } from "@/components/dashboard/conhecendo-o-sistema-catedral";
 
 export default function ConhecendoSistemaPage() {
-  return <PlaceholderPage basePath="/portal" title="Conhecendo o Sistema Catedral" />;
+  return <ConhecendoOSistemaCatedral basePath="/portal" />;
 }

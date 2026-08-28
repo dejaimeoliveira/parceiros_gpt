@@ -3,7 +3,7 @@
 Encontre respostas rápidas para as dúvidas mais comuns sobre o
 **Programa de Parceiros Catedral**.
 
-------------------------------------------------------------------------
+---
 
 # Indicações
 
@@ -14,14 +14,14 @@ solicitados e registre a indicação.
 
 Os campos obrigatórios são:
 
--   Nome da Empresa
--   CNPJ
--   Telefone
+- Nome da Empresa
+- CNPJ
+- Telefone
 
 Sempre que possível, informe também o nome da pessoa de contato, e-mail
 e alguma observação que possa ajudar a equipe comercial da Catedral.
 
-------------------------------------------------------------------------
+---
 
 ## Por quanto tempo minha indicação fica protegida?
 
@@ -31,7 +31,7 @@ Durante esse período, a equipe da Catedral poderá entrar em contato com
 o possível cliente, apresentar o sistema, fazer demonstrações e conduzir
 a negociação.
 
-------------------------------------------------------------------------
+---
 
 ## O que acontece depois de 90 dias?
 
@@ -39,7 +39,7 @@ Se a contratação não for concluída dentro do prazo de 90 dias, o período
 de proteção termina e o CNPJ poderá ficar disponível para uma nova
 indicação.
 
-------------------------------------------------------------------------
+---
 
 ## Posso indicar uma empresa que já é cliente da Catedral?
 
@@ -48,14 +48,14 @@ Não.
 O Portal verificará o CNPJ informado e não aceitará uma nova indicação
 quando a empresa já fizer parte da base de clientes da Catedral.
 
-------------------------------------------------------------------------
+---
 
 ## Posso indicar uma empresa que já foi indicada por outro parceiro?
 
 Enquanto existir uma indicação válida para o mesmo CNPJ, uma nova
 indicação não deverá ser aceita.
 
-------------------------------------------------------------------------
+---
 
 ## Onde acompanho as empresas que indiquei?
 
@@ -64,7 +64,7 @@ Acesse **Minhas Indicações** no Portal.
 Essa área permitirá consultar as oportunidades registradas e acompanhar
 sua evolução.
 
-------------------------------------------------------------------------
+---
 
 # Programa de Parcerias
 
@@ -77,14 +77,14 @@ cliente e registrar a indicação.
 
 A equipe comercial da Catedral será responsável por:
 
--   entrar em contato;
--   apresentar o Sistema Catedral;
--   fazer demonstrações;
--   esclarecer dúvidas;
--   apresentar condições comerciais;
--   conduzir a negociação.
+- entrar em contato;
+- apresentar o Sistema Catedral;
+- fazer demonstrações;
+- esclarecer dúvidas;
+- apresentar condições comerciais;
+- conduzir a negociação.
 
-------------------------------------------------------------------------
+---
 
 ## Preciso conhecer todos os detalhes técnicos do Sistema Catedral?
 
@@ -96,7 +96,7 @@ mas você não precisa responder questões técnicas que não domina.
 Se surgir uma dúvida específica, informe ao cliente que um consultor da
 Catedral poderá explicar corretamente durante a apresentação.
 
-------------------------------------------------------------------------
+---
 
 # Comissões
 
@@ -105,7 +105,7 @@ Catedral poderá explicar corretamente durante a apresentação.
 Você recebe **10% do valor de cada mensalidade paga** pelo cliente
 indicado, enquanto ele permanecer ativo e pagando suas mensalidades.
 
-------------------------------------------------------------------------
+---
 
 ## A comissão é paga apenas uma vez?
 
@@ -116,7 +116,7 @@ A comissão é **recorrente**.
 Enquanto o cliente indicado continuar utilizando o Sistema Catedral e
 pagando mensalidade, você continuará tendo direito à comissão de 10%.
 
-------------------------------------------------------------------------
+---
 
 ## Quando recebo minhas comissões?
 
@@ -125,14 +125,14 @@ cliente indicado.
 
 Os valores de diferentes clientes são somados para o pagamento.
 
-------------------------------------------------------------------------
+---
 
 ## Onde acompanho minhas comissões?
 
 Utilize a área **Comissões** do Portal para acompanhar os valores
 gerados pelas suas indicações.
 
-------------------------------------------------------------------------
+---
 
 # Materiais e Vendas
 
@@ -142,13 +142,13 @@ Acesse **Material de Vendas** no Portal.
 
 Lá você encontrará conteúdos como:
 
--   Vídeos
--   Apresentações
--   Argumentos de Venda
--   Objeções
--   Cases de Clientes
+- Vídeos
+- Apresentações
+- Argumentos de Venda
+- Objeções
+- Cases de Clientes
 
-------------------------------------------------------------------------
+---
 
 ## O que faço se não souber responder uma dúvida do cliente?
 
@@ -162,7 +162,7 @@ Você pode dizer:
 Depois, registre a indicação no Portal e deixe a equipe comercial dar
 continuidade ao atendimento.
 
-------------------------------------------------------------------------
+---
 
 # Cadastro
 
@@ -171,14 +171,14 @@ continuidade ao atendimento.
 Acesse **Meu Cadastro** no Portal para consultar e, quando permitido,
 atualizar suas informações.
 
-------------------------------------------------------------------------
+---
 
 ## Como altero minha senha?
 
 Acesse **Alterar Senha** no Portal e siga as instruções apresentadas na
 tela.
 
-------------------------------------------------------------------------
+---
 
 # Suporte
 
@@ -187,9 +187,9 @@ tela.
 Utilize a opção **Falar com a Catedral** no Portal.
 
 O contato é feito diretamente pelo WhatsApp do responsável pelas
-parcerias.
+parcerias. Dejaime (61) 99998-0021.
 
-------------------------------------------------------------------------
+---
 
 # Ainda ficou com dúvida?
 

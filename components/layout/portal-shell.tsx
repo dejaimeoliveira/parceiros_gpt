@@ -149,7 +149,6 @@ export function PortalShell({
         label: "Material de Vendas",
         icon: PackageOpen,
         items: [
-          { label: "Todos os Materiais", href: `${basePath}/material-de-vendas/todos-os-materiais` },
           { label: "Vídeos", href: `${basePath}/material-de-vendas/videos` },
           { label: "Circuito Catedral", href: `${basePath}/material-de-vendas/circuito-catedral` },
           { label: "Apresentações", href: `${basePath}/material-de-vendas/apresentacoes` },
