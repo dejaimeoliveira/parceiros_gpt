@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { ComoFuncionamComissoes } from "@/components/dashboard/comissoes-como-funcionam";
 
-export default function ComoFuncionamComissoesPage() {
-  return <PlaceholderPage basePath="/portal" title="Como Funcionam as Comissões" />;
+export default function Page() {
+  return <ComoFuncionamComissoes basePath="/portal" />;
 }

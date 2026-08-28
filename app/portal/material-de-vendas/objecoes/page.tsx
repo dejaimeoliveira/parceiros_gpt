@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { Objecoes } from "@/components/dashboard/objecoes";
 
 export default function ObjecoesPage() {
-  return <PlaceholderPage basePath="/portal" title="Objeções" />;
+  return <Objecoes basePath="/portal" />;
 }

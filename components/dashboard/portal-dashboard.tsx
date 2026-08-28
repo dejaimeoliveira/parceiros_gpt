@@ -48,7 +48,7 @@ export function PortalDashboard({
     { title: "Indicar Cliente", description: "Registre uma nova oportunidade.", href: `${basePath}/indicacoes/nova` },
     { title: "Minhas Indicações", description: "Acompanhe suas oportunidades.", href: `${basePath}/indicacoes/minhas-indicacoes` },
     { title: "Material de Vendas", description: "Acesse vídeos, apresentações e materiais.", href: `${basePath}/material-de-vendas/todos-os-materiais` },
-    { title: "Treinamentos", description: "Prepare-se para vender melhor.", href: `${basePath}/treinamentos/primeiros-passos` },
+    { title: "Treinamentos", description: "Prepare-se para vender melhor.", href: `${basePath}/treinamentos/passo-a-passo` },
     { title: "Falar com a Catedral", description: "Entre em contato com nossa equipe.", href: `${basePath}/central-do-parceiro/falar-com-a-catedral` },
   ];
 

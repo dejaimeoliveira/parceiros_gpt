@@ -7,7 +7,7 @@ import { PortalShell } from "@/components/layout/portal-shell";
 // This layout requires server-side auth and may block during prerender.
 export const dynamic = "force-dynamic";
 export const fetchCache = "default-no-store";
-
+ 
 
 async function getPartnerDisplayName(supabase: Awaited<ReturnType<typeof createClient>>, userId: string) {
   try {

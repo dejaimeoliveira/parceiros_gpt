@@ -8,7 +8,7 @@ import { PortalShell } from "@/components/layout/portal-shell";
 // runtime (cookies/session). This avoids uncached-data prerender errors.
 export const dynamic = "force-dynamic";
 export const fetchCache = "default-no-store";
-
+ 
 
 async function getPartnerDisplayName(supabase: Awaited<ReturnType<typeof createClient>>, userId: string) {
   try {

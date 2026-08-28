@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { redirect } from "next/navigation";
 
-export default function IndicarClientePage() {
-  return <PlaceholderPage basePath="/portal" title="Indicar Cliente" />;
+export default function Page() {
+  redirect("/protected/indicacoes/nova");
 }

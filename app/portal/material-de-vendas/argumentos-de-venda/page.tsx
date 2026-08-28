@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { ArgumentosDeVenda } from "@/components/dashboard/argumentos-de-venda";
 
 export default function ArgumentosPage() {
-  return <PlaceholderPage basePath="/portal" title="Argumentos de Venda" />;
+  return <ArgumentosDeVenda basePath="/portal" />;
 }

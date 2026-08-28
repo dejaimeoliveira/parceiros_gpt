@@ -1,5 +1,5 @@
 import { CasesDeClientes } from "@/components/dashboard/cases-de-clientes";
 
-export default function CasesClientesPage() {
+export default function Page() {
   return <CasesDeClientes />;
 }
