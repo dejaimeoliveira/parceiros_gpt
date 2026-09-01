@@ -44,29 +44,29 @@ export default async function Page() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">
           Central do Parceiro
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">
           Notícias e Comunicados
         </h1>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Acompanhe novidades, informações e comunicados importantes do Programa de Parceiros
           Catedral.
         </p>
       </div>
 
       {error ? (
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-8">
-          <p className="text-sm text-slate-600">
+        <div className="rounded-3xl border border-brand-border bg-white p-6 text-center shadow-sm sm:p-8">
+          <p className="text-sm text-brand-text-muted">
             Não foi possível carregar os comunicados neste momento. Tente novamente mais tarde.
           </p>
         </div>
       ) : !data || data.length === 0 ? (
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-8">
-          <p className="text-lg font-semibold text-slate-900">Nenhum comunicado no momento</p>
-          <p className="mt-2 text-sm text-slate-600">
+        <div className="rounded-3xl border border-brand-border bg-white p-6 text-center shadow-sm sm:p-8">
+          <p className="text-lg font-semibold text-brand-text">Nenhum comunicado no momento</p>
+          <p className="mt-2 text-sm text-brand-text-muted">
             Quando houver novidades do Programa de Parceiros Catedral, elas aparecerão aqui.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default async function Page() {
           {data.map((comunicado) => (
             <article
               key={comunicado.id}
-              className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+              className="overflow-hidden rounded-3xl border border-brand-border bg-white shadow-sm"
             >
               {comunicado.imagem_url ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -95,13 +95,13 @@ export default async function Page() {
                       Destaque
                     </span>
                   ) : null}
-                  <span className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                  <span className="text-xs font-medium uppercase tracking-wide text-brand-text-muted">
                     {formatDataPublicacao(comunicado.data_publicacao)}
                   </span>
                 </div>
 
-                <h2 className="mt-3 text-xl font-bold text-slate-900">{comunicado.titulo}</h2>
-                <div className="mt-3 whitespace-pre-line text-sm leading-relaxed text-slate-600">
+                <h2 className="mt-3 text-xl font-bold text-brand-text">{comunicado.titulo}</h2>
+                <div className="mt-3 whitespace-pre-line text-sm leading-relaxed text-brand-text-muted">
                   {comunicado.conteudo}
                 </div>
               </div>

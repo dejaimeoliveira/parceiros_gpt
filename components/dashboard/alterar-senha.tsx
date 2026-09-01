@@ -34,10 +34,10 @@ export function AlterarSenha({ email }: { email: string }) {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Portal</p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">Alterar Senha</h1>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">Portal</p>
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">Alterar Senha</h1>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Para sua segurança, enviaremos um link de redefinição para o e-mail cadastrado na sua
           conta. O link terá validade de 30 minutos.
         </p>
@@ -48,8 +48,8 @@ export function AlterarSenha({ email }: { email: string }) {
               <MailCheck className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-base font-semibold text-slate-900">Verifique seu e-mail</p>
-              <p className="mt-1 text-sm leading-relaxed text-slate-700">
+              <p className="text-base font-semibold text-brand-text">Verifique seu e-mail</p>
+              <p className="mt-1 text-sm leading-relaxed text-brand-text-muted">
                 Enviamos um link para alteração da senha. O link é válido por 30 minutos. Verifique
                 também a pasta de spam ou lixo eletrônico.
               </p>
@@ -57,15 +57,15 @@ export function AlterarSenha({ email }: { email: string }) {
           </div>
         ) : (
           <>
-            <div className="mt-6 flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+            <div className="mt-6 flex items-center gap-4 rounded-2xl border border-brand-border bg-brand-background p-5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
                 <KeyRound className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">
                   E-mail cadastrado
                 </p>
-                <p className="text-lg font-semibold text-slate-900">{maskEmail(email)}</p>
+                <p className="text-lg font-semibold text-brand-text">{maskEmail(email)}</p>
               </div>
             </div>
 
@@ -81,7 +81,7 @@ export function AlterarSenha({ email }: { email: string }) {
                 type="button"
                 onClick={handleEnviar}
                 disabled={status === "sending"}
-                className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex items-center justify-center rounded-xl bg-brand-dark px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-dark/90 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {status === "sending" ? "Enviando..." : "Enviar link para alterar senha"}
               </button>

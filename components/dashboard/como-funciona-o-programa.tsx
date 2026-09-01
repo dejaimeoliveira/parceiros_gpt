@@ -56,7 +56,7 @@ const passos = [
         </p>
         <ul className="mt-3 grid gap-2 sm:grid-cols-3">
           {segmentos.map((item) => (
-            <li key={item} className="flex items-center gap-2 text-sm text-slate-700">
+            <li key={item} className="flex items-center gap-2 text-sm text-brand-text-muted">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
               {item}
             </li>
@@ -73,7 +73,7 @@ const passos = [
           Converse de forma natural. O objetivo não é fazer uma apresentação técnica
           completa, mas descobrir se existe interesse ou necessidade.
         </p>
-        <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm italic text-slate-600">
+        <div className="mt-3 rounded-xl border border-brand-border bg-brand-background px-4 py-3 text-sm italic text-brand-text-muted">
           &quot;Conheço uma empresa de automação comercial chamada Catedral. Eles trabalham
           com vendas, estoque, financeiro e gestão. Se você quiser, posso pedir para um
           consultor entrar em contato e apresentar o sistema.&quot;
@@ -87,7 +87,7 @@ const passos = [
       <>
         <p>
           Quando houver abertura para contato, acesse{" "}
-          <strong className="font-semibold text-slate-900">Indicar Cliente</strong> no
+          <strong className="font-semibold text-brand-text">Indicar Cliente</strong> no
           Portal e registre a empresa.
         </p>
         <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
@@ -112,7 +112,7 @@ const passos = [
     body: (
       <p>
         Acompanhe suas oportunidades pela área{" "}
-        <strong className="font-semibold text-slate-900">Minhas Indicações</strong> do
+        <strong className="font-semibold text-brand-text">Minhas Indicações</strong> do
         Portal.
       </p>
     ),
@@ -131,7 +131,7 @@ const passos = [
     body: (
       <p>
         A comissão do parceiro é gerada a partir das{" "}
-        <strong className="font-semibold text-slate-900">mensalidades efetivamente
+        <strong className="font-semibold text-brand-text">mensalidades efetivamente
         pagas</strong>{" "}
         pelo cliente indicado.
       </p>
@@ -142,7 +142,7 @@ const passos = [
     body: (
       <p>
         Você recebe{" "}
-        <strong className="font-semibold text-slate-900">10% do valor de cada
+        <strong className="font-semibold text-brand-text">10% do valor de cada
         mensalidade paga</strong>{" "}
         pelo cliente indicado, enquanto esse cliente continuar ativo e pagando o
         Sistema Catedral.
@@ -280,17 +280,17 @@ export function ComoFuncionaOPrograma({ basePath }: { basePath: string }) {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">
           Programa de Parceiros Catedral
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">
           Como Funciona o Programa
         </h1>
-        <p className="mt-2 max-w-2xl text-base font-medium text-slate-700">
+        <p className="mt-2 max-w-2xl text-base font-medium text-brand-text-muted">
           Entenda como transformar boas indicações em uma fonte recorrente de comissões.
         </p>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           O Programa de Parceiros Catedral foi criado para pessoas que conhecem empresas,
           empreendedores e gestores que podem se beneficiar do Sistema Catedral. Você
           identifica a oportunidade e registra a indicação. A equipe da Catedral cuida da
@@ -301,13 +301,13 @@ export function ComoFuncionaOPrograma({ basePath }: { basePath: string }) {
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href={`${basePath}/indicacoes/nova`}
-            className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+            className="inline-flex items-center justify-center rounded-xl bg-brand-primary px-5 py-3 text-sm font-semibold text-brand-dark shadow-sm transition hover:bg-brand-primary-hover"
           >
             Indicar um cliente
           </Link>
           <Link
             href={`${basePath}/indicacoes/minhas-indicacoes`}
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-100"
+            className="inline-flex items-center justify-center rounded-xl border border-brand-border bg-white px-5 py-3 text-sm font-semibold text-brand-text-muted shadow-sm transition hover:bg-brand-background"
           >
             Ver minhas indicações
           </Link>
@@ -315,16 +315,16 @@ export function ComoFuncionaOPrograma({ basePath }: { basePath: string }) {
       </div>
 
       {/* Mensagem de destaque */}
-      <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-6 text-center shadow-sm sm:p-8">
-        <p className="text-xl font-bold text-slate-900 sm:text-2xl">
+      <div className="rounded-3xl border border-brand-primary/30 bg-brand-primary/10 p-6 text-center shadow-sm sm:p-8">
+        <p className="text-xl font-bold text-brand-text sm:text-2xl">
           Você indica. A Catedral vende. Você acompanha. Você ganha.
         </p>
       </div>
 
       {/* Visão geral */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Um programa simples de indicação</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Um programa simples de indicação</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Você não precisa ser vendedor técnico do Sistema Catedral. Seu papel é
           identificar empresas que possam precisar de uma solução para vendas, estoque,
           financeiro, emissão fiscal e gestão. Depois de registrar a indicação no Portal,
@@ -332,94 +332,94 @@ export function ComoFuncionaOPrograma({ basePath }: { basePath: string }) {
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {visaoGeral.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
+            <div key={item.title} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-dark text-white">
                 <item.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-3 text-sm font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{item.body}</p>
+              <h3 className="mt-3 text-sm font-semibold text-brand-text">{item.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-brand-text-muted">{item.body}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Passo a passo */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Do primeiro contato à comissão</h2>
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Do primeiro contato à comissão</h2>
         <div className="mt-6 space-y-4">
           {passos.map((passo) => (
-            <div key={passo.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <h3 className="text-base font-semibold text-slate-900">{passo.title}</h3>
-              <div className="mt-2 text-sm leading-relaxed text-slate-600">{passo.body}</div>
+            <div key={passo.title} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <h3 className="text-base font-semibold text-brand-text">{passo.title}</h3>
+              <div className="mt-2 text-sm leading-relaxed text-brand-text-muted">{passo.body}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Regra dos 90 dias */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
             <CalendarClock className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Sua indicação fica protegida por 90 dias</h2>
+          <h2 className="text-2xl font-bold text-brand-text">Sua indicação fica protegida por 90 dias</h2>
         </div>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           A partir do registro da indicação, o CNPJ fica vinculado ao parceiro pelo prazo
           de 90 dias. Durante esse período, outra indicação para o mesmo CNPJ não
           prevalece. Caso a contratação não seja concluída dentro do prazo, o CNPJ pode
           ficar disponível para uma nova indicação.
         </p>
-        <div className="mt-5 flex flex-col items-center gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div className="mt-5 flex flex-col items-center gap-2 rounded-2xl border border-brand-border bg-brand-background p-6 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Dia da indicação</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">Dia da indicação</p>
           </div>
-          <div className="h-2 w-full max-w-xs rounded-full bg-gradient-to-r from-slate-900 to-emerald-500 sm:mx-4" />
+          <div className="h-2 w-full max-w-xs rounded-full bg-gradient-to-r from-brand-dark to-brand-primary sm:mx-4" />
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Fim da proteção (90 dias)</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">Fim da proteção (90 dias)</p>
           </div>
         </div>
       </div>
 
       {/* Comissões */}
-      <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-brand-primary/30 bg-brand-primary/10 p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-primary text-brand-dark">
             <CircleDollarSign className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Comissão simples e recorrente</h2>
+          <h2 className="text-2xl font-bold text-brand-text">Comissão simples e recorrente</h2>
         </div>
 
-        <div className="mt-5 inline-flex flex-col rounded-2xl border border-emerald-200 bg-white px-6 py-4">
-          <span className="text-3xl font-bold text-emerald-600">10%</span>
-          <span className="text-sm text-slate-600">de cada mensalidade paga</span>
+        <div className="mt-5 inline-flex flex-col rounded-2xl border border-brand-primary/30 bg-white px-6 py-4">
+          <span className="text-3xl font-bold text-brand-text">10%</span>
+          <span className="text-sm text-brand-text-muted">de cada mensalidade paga</span>
         </div>
 
-        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-slate-700">
+        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Quando o cliente indicado começa a pagar as mensalidades do Sistema Catedral, o
           parceiro passa a ter direito a 10% do valor de cada mensalidade efetivamente
           recebida. Essa comissão não acontece apenas uma vez — ela é recorrente enquanto
           o cliente permanecer ativo e pagando mensalidade.
         </p>
 
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-700">
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           As comissões são pagas no mês subsequente ao pagamento realizado pelo cliente
           indicado. Quando houver comissões de vários clientes, os valores podem ser
           somados para o pagamento.
         </p>
 
-        <div className="mt-5 flex flex-wrap items-center gap-4 rounded-2xl border border-emerald-200 bg-white p-5">
+        <div className="mt-5 flex flex-wrap items-center gap-4 rounded-2xl border border-brand-primary/30 bg-white p-5">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Mensalidade paga</p>
-            <p className="text-2xl font-bold text-slate-900">R$ 300,00</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">Mensalidade paga</p>
+            <p className="text-2xl font-bold text-brand-text">R$ 300,00</p>
           </div>
-          <div className="text-2xl text-slate-300">→</div>
+          <div className="text-2xl text-brand-text-muted/40">→</div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Sua comissão</p>
-            <p className="text-2xl font-bold text-emerald-600">R$ 30,00</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">Sua comissão</p>
+            <p className="text-2xl font-bold text-brand-text">R$ 30,00</p>
           </div>
         </div>
-        <p className="mt-3 text-xs text-slate-600">
+        <p className="mt-3 text-xs text-brand-text-muted">
           Exemplo apenas ilustrativo. O valor real depende da mensalidade efetivamente
           paga pelo cliente.
         </p>
@@ -427,23 +427,23 @@ export function ComoFuncionaOPrograma({ basePath }: { basePath: string }) {
 
       {/* Responsabilidades */}
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <h2 className="text-xl font-bold text-slate-900">O seu papel como parceiro</h2>
+        <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+          <h2 className="text-xl font-bold text-brand-text">O seu papel como parceiro</h2>
           <ul className="mt-4 space-y-2">
             {responsabilidadesParceiro.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+              <li key={item} className="flex items-start gap-2 text-sm text-brand-text-muted">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
                 {item}
               </li>
             ))}
           </ul>
         </div>
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <h2 className="text-xl font-bold text-slate-900">O que a Catedral faz</h2>
+        <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+          <h2 className="text-xl font-bold text-brand-text">O que a Catedral faz</h2>
           <ul className="mt-4 space-y-2">
             {responsabilidadesCatedral.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+              <li key={item} className="flex items-start gap-2 text-sm text-brand-text-muted">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
                 {item}
               </li>
             ))}
@@ -452,40 +452,40 @@ export function ComoFuncionaOPrograma({ basePath }: { basePath: string }) {
       </div>
 
       {/* O que não precisa fazer */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-xl font-bold text-slate-900">Você não precisa ser especialista no sistema</h2>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-xl font-bold text-brand-text">Você não precisa ser especialista no sistema</h2>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           O parceiro não precisa dominar todos os detalhes técnicos nem conduzir sozinho
           uma negociação comercial.
         </p>
         <ul className="mt-4 grid gap-2 sm:grid-cols-2">
           {naoPrecisaFazer.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+            <li key={item} className="flex items-start gap-2 text-sm text-brand-text-muted">
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
               {item}
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm text-slate-600">
+        <p className="mt-4 text-sm text-brand-text-muted">
           Quando surgir uma dúvida que você não domina, informe ao potencial cliente que
           um consultor da Catedral poderá explicar corretamente.
         </p>
       </div>
 
       {/* Onde acompanhar no Portal */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Use o Portal em cada etapa</h2>
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Use o Portal em cada etapa</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {acompanharCards.map((card) => (
-            <div key={card.title} className="flex flex-col rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
+            <div key={card.title} className="flex flex-col rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-dark text-white">
                 <card.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-3 text-sm font-semibold text-slate-900">{card.title}</h3>
-              <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-600">{card.body}</p>
+              <h3 className="mt-3 text-sm font-semibold text-brand-text">{card.title}</h3>
+              <p className="mt-1.5 flex-1 text-sm leading-relaxed text-brand-text-muted">{card.body}</p>
               <Link
                 href={card.href}
-                className="mt-4 inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
+                className="mt-4 inline-flex items-center justify-center rounded-xl border border-brand-border bg-white px-4 py-2 text-sm font-semibold text-brand-text-muted transition hover:bg-brand-background"
               >
                 {card.cta}
               </Link>
@@ -495,36 +495,36 @@ export function ComoFuncionaOPrograma({ basePath }: { basePath: string }) {
       </div>
 
       {/* Boas práticas */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Como aumentar suas chances de uma boa indicação</h2>
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Como aumentar suas chances de uma boa indicação</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {boasPraticas.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{item.body}</p>
+            <div key={item.title} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <h3 className="text-sm font-semibold text-brand-text">{item.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-brand-text-muted">{item.body}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Perguntas rápidas */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Perguntas rápidas</h2>
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Perguntas rápidas</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {perguntasRapidas.map((item) => (
-            <div key={item.pergunta} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <h3 className="text-sm font-semibold text-slate-900">{item.pergunta}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{item.resposta}</p>
+            <div key={item.pergunta} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <h3 className="text-sm font-semibold text-brand-text">{item.pergunta}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-brand-text-muted">{item.resposta}</p>
             </div>
           ))}
         </div>
-        <p className="mt-6 text-sm text-slate-600">
+        <p className="mt-6 text-sm text-brand-text-muted">
           Ainda tem dúvidas? Consulte{" "}
-          <Link href={`${basePath}/central-do-parceiro/perguntas-frequentes`} className="font-semibold text-slate-900 underline underline-offset-2">
+          <Link href={`${basePath}/central-do-parceiro/perguntas-frequentes`} className="font-semibold text-brand-text underline underline-offset-2">
             Perguntas Frequentes
           </Link>{" "}
           ou{" "}
-          <Link href={`${basePath}/central-do-parceiro/falar-com-a-catedral`} className="font-semibold text-slate-900 underline underline-offset-2">
+          <Link href={`${basePath}/central-do-parceiro/falar-com-a-catedral`} className="font-semibold text-brand-text underline underline-offset-2">
             fale com a Catedral
           </Link>
           .
@@ -532,24 +532,24 @@ export function ComoFuncionaOPrograma({ basePath }: { basePath: string }) {
       </div>
 
       {/* CTA final */}
-      <div className="rounded-3xl border border-slate-200 bg-slate-900 p-6 text-center shadow-sm sm:p-10">
+      <div className="rounded-3xl border border-brand-border bg-brand-dark p-6 text-center shadow-sm sm:p-10">
         <h2 className="text-2xl font-bold text-white sm:text-3xl">
           Conhece uma empresa que pode precisar do Sistema Catedral?
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/70">
           Registre a oportunidade no Portal e deixe nossa equipe cuidar da apresentação e
           da negociação.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Link
             href={`${basePath}/indicacoes/nova`}
-            className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100"
+            className="inline-flex items-center justify-center rounded-xl bg-brand-primary px-5 py-3 text-sm font-semibold text-brand-dark shadow-sm transition hover:bg-brand-primary-hover"
           >
             Indicar um cliente
           </Link>
           <Link
             href={`${basePath}/material-de-vendas/videos`}
-            className="inline-flex items-center justify-center rounded-xl border border-slate-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="inline-flex items-center justify-center rounded-xl border border-brand-primary/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark/90"
           >
             Ver Material de Vendas
           </Link>

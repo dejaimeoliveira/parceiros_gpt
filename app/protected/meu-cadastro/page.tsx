@@ -19,8 +19,8 @@ function formatCpf(cpf: string | null) {
 function Campo({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</p>
-      <p className="mt-1 text-base font-medium text-slate-900">{value}</p>
+      <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">{label}</p>
+      <p className="mt-1 text-base font-medium text-brand-text">{value}</p>
     </div>
   );
 }
@@ -50,18 +50,18 @@ export default async function Page() {
     console.error("Erro ao buscar wp_parceiros:", error);
 
     return (
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-8">
-        <p className="text-lg font-semibold text-slate-900">Não foi possível carregar seu cadastro</p>
-        <p className="mt-2 text-sm text-slate-600">Tente novamente mais tarde.</p>
+      <div className="rounded-3xl border border-brand-border bg-white p-6 text-center shadow-sm sm:p-8">
+        <p className="text-lg font-semibold text-brand-text">Não foi possível carregar seu cadastro</p>
+        <p className="mt-2 text-sm text-brand-text-muted">Tente novamente mais tarde.</p>
       </div>
     );
   }
 
   if (!data) {
     return (
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-8">
-        <p className="text-lg font-semibold text-slate-900">Cadastro não encontrado</p>
-        <p className="mt-2 text-sm text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 text-center shadow-sm sm:p-8">
+        <p className="text-lg font-semibold text-brand-text">Cadastro não encontrado</p>
+        <p className="mt-2 text-sm text-brand-text-muted">
           Não foi possível localizar seu cadastro de parceiro. Entre em contato com a Catedral.
         </p>
       </div>
@@ -70,14 +70,14 @@ export default async function Page() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Portal</p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">Meu Cadastro</h1>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">Portal</p>
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">Meu Cadastro</h1>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Consulte seus dados cadastrados no Programa de Parceiros Catedral.
         </p>
 
-        <div className="mt-6 grid gap-6 rounded-2xl border border-slate-200 bg-slate-50/60 p-5 sm:grid-cols-2">
+        <div className="mt-6 grid gap-6 rounded-2xl border border-brand-border bg-brand-background/60 p-5 sm:grid-cols-2">
           <Campo label="Nome" value={data.nome || "Não informado"} />
           <Campo label="E-mail" value={data.email || "Não informado"} />
           <Campo label="Telefone" value={data.telefone || "Não informado"} />

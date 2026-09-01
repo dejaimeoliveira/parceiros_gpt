@@ -18,37 +18,37 @@ export function FalarComACatedral() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">
           Central do Parceiro
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">Falar com a Catedral</h1>
-        <p className="mt-2 text-base text-slate-600">Precisa de ajuda?</p>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">Falar com a Catedral</h1>
+        <p className="mt-2 text-base text-brand-text-muted">Precisa de ajuda?</p>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Para dúvidas sobre indicações, comissões, pagamentos, materiais ou qualquer outro assunto
           relacionado ao Programa de Parceiros Catedral, fale diretamente com o Dejaime, responsável pelas
           parcerias.
         </p>
 
-        <div className="mt-6 flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+        <div className="mt-6 flex items-center gap-4 rounded-2xl border border-brand-border bg-brand-background p-5">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
             <Phone className="h-5 w-5" />
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">WhatsApp</p>
-            <p className="text-lg font-semibold text-slate-900">{WHATSAPP_DISPLAY}</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">WhatsApp</p>
+            <p className="text-lg font-semibold text-brand-text">{WHATSAPP_DISPLAY}</p>
           </div>
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-primary text-brand-dark">
             <MessageCircle className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Mensagem</h2>
+          <h2 className="text-2xl font-bold text-brand-text">Mensagem</h2>
         </div>
-        <p className="mt-3 text-sm text-slate-600">
+        <p className="mt-3 text-sm text-brand-text-muted">
           Você pode editar a mensagem abaixo antes de enviar pelo WhatsApp.
         </p>
 
@@ -56,14 +56,14 @@ export function FalarComACatedral() {
           value={mensagem}
           onChange={(e) => setMensagem(e.target.value)}
           rows={5}
-          className="mt-4 w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="mt-4 w-full rounded-2xl border border-brand-border bg-brand-background/60 px-4 py-3 text-sm text-brand-text-muted shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
         />
 
         <div className="mt-5">
           <button
             type="button"
             onClick={handleEnviar}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-primary px-5 py-3 text-sm font-semibold text-brand-dark shadow-sm transition hover:bg-brand-primary-hover"
           >
             <MessageCircle className="h-4 w-4" />
             Enviar mensagem pelo WhatsApp

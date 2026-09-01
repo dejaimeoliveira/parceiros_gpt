@@ -35,7 +35,7 @@ function AccordionItem({ item, isOpen, onToggle }: { item: Pergunta; isOpen: boo
   const answerId = `faq-answer-${item.id}`;
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-slate-50/60">
+    <div className="rounded-2xl border border-brand-border bg-brand-background/60">
       <h3>
         <button
           type="button"
@@ -43,11 +43,11 @@ function AccordionItem({ item, isOpen, onToggle }: { item: Pergunta; isOpen: boo
           aria-expanded={isOpen}
           aria-controls={answerId}
           onClick={onToggle}
-          className="flex w-full items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left text-sm font-semibold text-slate-900 outline-none transition-colors hover:bg-slate-100 focus-visible:ring-2 focus-visible:ring-emerald-500"
+          className="flex w-full items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left text-sm font-semibold text-brand-text outline-none transition-colors hover:bg-brand-background focus-visible:ring-2 focus-visible:ring-brand-primary"
         >
           <span>{item.pergunta}</span>
           <ChevronDown
-            className={cn("h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200", isOpen && "rotate-180")}
+            className={cn("h-4 w-4 shrink-0 text-brand-text-muted transition-transform duration-200", isOpen && "rotate-180")}
           />
         </button>
       </h3>
@@ -61,7 +61,7 @@ function AccordionItem({ item, isOpen, onToggle }: { item: Pergunta; isOpen: boo
         )}
       >
         <div className="overflow-hidden">
-          <p className="whitespace-pre-line px-5 pb-4 text-sm leading-relaxed text-slate-600">{item.resposta}</p>
+          <p className="whitespace-pre-line px-5 pb-4 text-sm leading-relaxed text-brand-text-muted">{item.resposta}</p>
         </div>
       </div>
     </div>
@@ -102,46 +102,46 @@ export function PerguntasFrequentes({ perguntas }: { perguntas: Pergunta[] }) {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">
           Central do Parceiro
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">
           Perguntas Frequentes
         </h1>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Encontre respostas rápidas para as dúvidas mais comuns sobre o Programa de Parceiros
           Catedral.
         </p>
 
         <div className="relative mt-6 max-w-md">
-          <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+          <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-text-muted" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Pesquisar pergunta..."
-            className="w-full rounded-2xl border border-slate-200 bg-slate-50/60 py-3 pl-11 pr-4 text-sm text-slate-700 shadow-sm outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full rounded-2xl border border-brand-border bg-brand-background/60 py-3 pl-11 pr-4 text-sm text-brand-text-muted shadow-sm outline-none focus:ring-2 focus:ring-brand-primary"
           />
         </div>
       </div>
 
       {perguntas.length === 0 ? (
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-8">
-          <p className="text-lg font-semibold text-slate-900">
+        <div className="rounded-3xl border border-brand-border bg-white p-6 text-center shadow-sm sm:p-8">
+          <p className="text-lg font-semibold text-brand-text">
             Nenhuma pergunta disponível no momento
           </p>
-          <p className="mt-2 text-sm text-slate-600">Novas respostas serão adicionadas em breve.</p>
+          <p className="mt-2 text-sm text-brand-text-muted">Novas respostas serão adicionadas em breve.</p>
         </div>
       ) : groups.length === 0 ? (
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-8">
-          <p className="text-sm text-slate-600">Nenhuma pergunta encontrada.</p>
+        <div className="rounded-3xl border border-brand-border bg-white p-6 text-center shadow-sm sm:p-8">
+          <p className="text-sm text-brand-text-muted">Nenhuma pergunta encontrada.</p>
         </div>
       ) : (
         <div className="space-y-6">
           {groups.map(([categoria, items]) => (
-            <div key={categoria} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-              <h2 className="text-xl font-bold text-slate-900">{categoria}</h2>
+            <div key={categoria} className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+              <h2 className="text-xl font-bold text-brand-text">{categoria}</h2>
               <div className="mt-4 space-y-3">
                 {items.map((item) => (
                   <AccordionItem

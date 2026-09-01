@@ -26,7 +26,7 @@ export default async function Page() {
   const { data, error } = await fetchIndications();
 
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm">
       <h1 className="text-2xl font-bold">Minhas indicações</h1>
 
       {error ? (
@@ -34,19 +34,19 @@ export default async function Page() {
       ) : null}
 
       <div className="mt-6 space-y-4">
-        {(!data || data.length === 0) && <p className="text-sm text-slate-600">Você ainda não possui indicações.</p>}
+        {(!data || data.length === 0) && <p className="text-sm text-brand-text-muted">Você ainda não possui indicações.</p>}
 
         {data?.map((item: any) => (
           <div key={item.id} className="rounded-lg border p-4">
             <div className="flex items-center justify-between">
-              <div className="font-medium text-slate-900">{item.nome_contato || "-"}</div>
-              <div className="text-sm text-slate-500">{item.origem || "-"}</div>
+              <div className="font-medium text-brand-text">{item.nome_contato || "-"}</div>
+              <div className="text-sm text-brand-text-muted">{item.origem || "-"}</div>
             </div>
-            <div className="mt-2 text-sm text-slate-600">{item.email || "-"} • {item.telefone || "-"}</div>
-            {item.empresa ? <div className="mt-2 text-sm text-slate-600">Empresa: {item.empresa}</div> : null}
-            {item.cnpj ? <div className="mt-1 text-sm text-slate-600">CNPJ: {item.cnpj}</div> : null}
-            {item.observacao ? <div className="mt-3 text-sm text-slate-700">{item.observacao}</div> : null}
-            {item.data_indicacao ? <div className="mt-2 text-xs text-slate-500">Indicada em: {String(item.data_indicacao)}</div> : null}
+            <div className="mt-2 text-sm text-brand-text-muted">{item.email || "-"} • {item.telefone || "-"}</div>
+            {item.empresa ? <div className="mt-2 text-sm text-brand-text-muted">Empresa: {item.empresa}</div> : null}
+            {item.cnpj ? <div className="mt-1 text-sm text-brand-text-muted">CNPJ: {item.cnpj}</div> : null}
+            {item.observacao ? <div className="mt-3 text-sm text-brand-text-muted">{item.observacao}</div> : null}
+            {item.data_indicacao ? <div className="mt-2 text-xs text-brand-text-muted">Indicada em: {String(item.data_indicacao)}</div> : null}
           </div>
         ))}
       </div>

@@ -72,70 +72,70 @@ export default function Page() {
   };
 
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm">
       <h1 className="text-2xl font-bold">Indicar Cliente</h1>
 
       <form onSubmit={handleSubmit} className="mt-6 max-w-3xl">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label className="block text-sm font-medium text-slate-700">Nome do cliente</label>
+            <label className="block text-sm font-medium text-brand-text-muted">Nome do cliente</label>
             <input
               placeholder="Nome completo"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
-              className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="mt-1 w-full rounded-md border border-brand-border bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-700">E-mail</label>
+            <label className="block text-sm font-medium text-brand-text-muted">E-mail</label>
             <input
               placeholder="exemplo@cliente.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="mt-1 w-full rounded-md border border-brand-border bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-700">CNPJ *</label>
+            <label className="block text-sm font-medium text-brand-text-muted">CNPJ *</label>
             <input
               placeholder="00.000.000/0000-00"
               value={cnpj}
               onChange={(e) => setCnpj(e.target.value)}
               required
-              className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="mt-1 w-full rounded-md border border-brand-border bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-700">Telefone</label>
+            <label className="block text-sm font-medium text-brand-text-muted">Telefone</label>
             <input
               placeholder="(00) 00000-0000"
               value={telefone}
               onChange={(e) => setTelefone(e.target.value)}
-              className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="mt-1 w-full rounded-md border border-brand-border bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-700">Empresa</label>
+            <label className="block text-sm font-medium text-brand-text-muted">Empresa</label>
             <input
               placeholder="Razão social"
               value={empresa}
               onChange={(e) => setEmpresa(e.target.value)}
-              className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="mt-1 w-full rounded-md border border-brand-border bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
             />
           </div>
         </div>
 
         <div className="mt-4">
-          <label className="block text-sm font-medium text-slate-700">Observações</label>
+          <label className="block text-sm font-medium text-brand-text-muted">Observações</label>
           <textarea
             placeholder="Informações adicionais"
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
-            className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="mt-1 w-full rounded-md border border-brand-border bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
             rows={5}
           />
         </div>
@@ -146,15 +146,15 @@ export default function Page() {
           <button
             type="submit"
             disabled={loading}
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 px-4 py-2 text-sm font-semibold text-white"
+            className="inline-flex items-center gap-2 rounded-xl bg-brand-primary hover:bg-brand-primary-hover disabled:opacity-50 px-4 py-2 text-sm font-semibold text-brand-dark"
           >
             {loading ? (
-              <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+              <div className="h-4 w-4 animate-spin rounded-full border-2 border-brand-dark border-t-transparent" />
             ) : null}
             {loading ? "Enviando..." : "Enviar indicação"}
           </button>
 
-          <button type="button" onClick={() => router.push("/protected")} className="text-sm text-slate-600 hover:underline">
+          <button type="button" onClick={() => router.push("/protected")} className="text-sm text-brand-text-muted hover:underline">
             Voltar
           </button>
         </div>

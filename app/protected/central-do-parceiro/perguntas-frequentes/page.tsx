@@ -22,8 +22,8 @@ export default async function Page() {
     console.error("Erro ao buscar wp_perguntas_frequentes:", error);
 
     return (
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-8">
-        <p className="text-sm text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 text-center shadow-sm sm:p-8">
+        <p className="text-sm text-brand-text-muted">
           Não foi possível carregar as perguntas frequentes neste momento. Tente novamente mais
           tarde.
         </p>

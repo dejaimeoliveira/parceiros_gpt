@@ -105,12 +105,12 @@ const resumo = [
 export function CasesDeClientes() {
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">
           Material de Vendas
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">Cases de Clientes</h1>
-        <p className="mt-4 max-w-2xl text-base text-slate-600">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">Cases de Clientes</h1>
+        <p className="mt-4 max-w-2xl text-base text-brand-text-muted">
           Histórias reais ajudam a entender que o sucesso de um negócio não depende de uma única
           fórmula. Tradição, planejamento, diferenciação, controle financeiro e acontecimentos
           inesperados podem mudar completamente o rumo de uma empresa.
@@ -118,40 +118,40 @@ export function CasesDeClientes() {
       </div>
 
       {cases.map((c) => (
-        <div key={c.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <div key={c.title} className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
               <c.icon className="h-5 w-5" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-900">{c.title}</h2>
+            <h2 className="text-2xl font-bold text-brand-text">{c.title}</h2>
           </div>
 
-          <div className="mt-4 max-w-3xl space-y-3 text-sm leading-relaxed text-slate-600">
+          <div className="mt-4 max-w-3xl space-y-3 text-sm leading-relaxed text-brand-text-muted">
             {c.paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </div>
 
           {c.dialogue ? (
-            <div className="mt-4 max-w-3xl space-y-2 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <div className="mt-4 max-w-3xl space-y-2 rounded-2xl border border-brand-border bg-brand-background p-4">
               {c.dialogue.map((d, i) => (
-                <p key={i} className="text-sm italic text-slate-700">
-                  <span className="font-semibold not-italic text-slate-900">{d.speaker}: </span>
+                <p key={i} className="text-sm italic text-brand-text-muted">
+                  <span className="font-semibold not-italic text-brand-text">{d.speaker}: </span>
                   &ldquo;{d.line}&rdquo;
                 </p>
               ))}
             </div>
           ) : null}
 
-          <div className="mt-5 rounded-2xl border-l-4 border-emerald-400 bg-emerald-50 p-5">
+          <div className="mt-5 rounded-2xl border-l-4 border-brand-primary bg-brand-primary/10 p-5">
             <div className="flex items-center gap-2">
-              <Lightbulb className="h-4 w-4 text-emerald-700" />
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800">
+              <Lightbulb className="h-4 w-4 text-brand-text" />
+              <p className="text-xs font-semibold uppercase tracking-wide text-brand-text">
                 O que podemos aprender com este caso?
               </p>
             </div>
-            <p className="mt-2 text-base font-semibold text-slate-900">{c.lesson}</p>
-            <div className="mt-2 space-y-2 text-sm leading-relaxed text-slate-700">
+            <p className="mt-2 text-base font-semibold text-brand-text">{c.lesson}</p>
+            <div className="mt-2 space-y-2 text-sm leading-relaxed text-brand-text-muted">
               {c.lessonParagraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -160,16 +160,16 @@ export function CasesDeClientes() {
         </div>
       ))}
 
-      <div className="rounded-3xl border border-slate-200 bg-slate-900 p-6 shadow-sm sm:p-10">
+      <div className="rounded-3xl border border-brand-border bg-brand-dark p-6 shadow-sm sm:p-10">
         <h2 className="text-2xl font-bold text-white sm:text-3xl">Quatro histórias, quatro aprendizados</h2>
         <ul className="mt-5 space-y-2">
           {resumo.map((item) => (
-            <li key={item.nome} className="text-sm text-slate-300">
+            <li key={item.nome} className="text-sm text-white/70">
               <strong className="font-semibold text-white">{item.nome}:</strong> {item.aprendizado}.
             </li>
           ))}
         </ul>
-        <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-white/70">
           Não existe uma fórmula capaz de garantir o sucesso de uma empresa. Mas conhecer histórias
           de outros empreendedores ajuda a reconhecer oportunidades, evitar erros e tomar decisões
           melhores.

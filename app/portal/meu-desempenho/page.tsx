@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { redirect } from "next/navigation";
 
-export default function MeuDesempenhoPage() {
-  return <PlaceholderPage basePath="/portal" title="Meu Desempenho" />;
+export default function Page() {
+  redirect("/portal/comissoes/comissoes-e-desempenho");
 }

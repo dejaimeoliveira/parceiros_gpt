@@ -48,20 +48,20 @@ export function LoginForm({
     <div className={cn("w-full", className)} {...props}>
       <form
         onSubmit={handleLogin}
-        className="rounded-[22px] border border-slate-200 bg-white p-6 shadow-[0_14px_38px_rgba(15,23,42,0.08)] md:p-8"
+        className="rounded-[22px] border border-brand-border bg-white p-6 shadow-[0_14px_38px_rgba(15,23,42,0.08)] md:p-8"
       >
         <div className="mb-7">
-          <h2 className="text-3xl font-black tracking-[-0.06em] text-slate-900 md:text-[2.2rem]">
+          <h2 className="text-3xl font-black tracking-[-0.06em] text-brand-text md:text-[2.2rem]">
             Portal de Parceiros
           </h2>
-          <p className="mt-2 text-base text-slate-600">
+          <p className="mt-2 text-base text-brand-text-muted">
             Catedral Automação — entre com sua conta
           </p>
         </div>
 
         <div className="space-y-6">
           <div className="grid gap-2">
-            <Label htmlFor="email" className="text-base font-medium text-slate-700">
+            <Label htmlFor="email" className="text-base font-medium text-brand-text-muted">
               E-mail
             </Label>
             <Input
@@ -72,18 +72,18 @@ export function LoginForm({
               required
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              className="h-12 rounded-xl border-slate-200 bg-slate-50/60 text-base text-slate-900 placeholder:text-slate-400 focus-visible:ring-slate-300"
+              className="h-12 rounded-xl border-brand-border bg-brand-background/60 text-base text-brand-text placeholder:text-brand-text-muted focus-visible:ring-brand-primary"
             />
           </div>
 
           <div className="grid gap-2">
             <div className="flex items-center justify-between gap-3">
-              <Label htmlFor="password" className="text-base font-medium text-slate-700">
+              <Label htmlFor="password" className="text-base font-medium text-brand-text-muted">
                 Senha
               </Label>
               <Link
                 href="/auth/forgot-password"
-                className="text-sm text-slate-600 underline-offset-4 transition hover:text-slate-900 hover:underline"
+                className="text-sm text-brand-text-muted underline-offset-4 transition hover:text-brand-text hover:underline"
               >
                 Esqueci minha senha
               </Link>
@@ -95,7 +95,7 @@ export function LoginForm({
               required
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              className="h-12 rounded-xl border-slate-200 bg-slate-50/60 text-base text-slate-900 placeholder:text-slate-400 focus-visible:ring-slate-300"
+              className="h-12 rounded-xl border-brand-border bg-brand-background/60 text-base text-brand-text placeholder:text-brand-text-muted focus-visible:ring-brand-primary"
             />
           </div>
         </div>
@@ -109,7 +109,7 @@ export function LoginForm({
         <Button
           type="submit"
           disabled={isLoading}
-          className="mt-6 h-12 w-full rounded-xl bg-slate-950 text-base font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
+          className="mt-6 h-12 w-full rounded-xl bg-brand-dark text-base font-semibold text-white transition hover:bg-brand-dark/90 disabled:cursor-not-allowed disabled:opacity-70"
         >
           {isLoading ? "Entrando..." : "Entrar"}
         </Button>
@@ -117,7 +117,7 @@ export function LoginForm({
         <div className="mt-5 text-center">
           <Link
             href="/auth/forgot-password"
-            className="text-base text-slate-700 underline-offset-4 transition hover:text-slate-950 hover:underline"
+            className="text-base text-brand-text-muted underline-offset-4 transition hover:text-brand-text hover:underline"
           >
             Esqueci minha senha
           </Link>

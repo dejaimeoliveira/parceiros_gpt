@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { ComoVenderPorIndicacao } from "@/components/dashboard/como-vender-por-indicacao";
 
 export default function ComoVenderIndicacaoPage() {
-  return <PlaceholderPage basePath="/portal" title="Como Vender por Indicação" />;
+  return <ComoVenderPorIndicacao basePath="/portal" />;
 }

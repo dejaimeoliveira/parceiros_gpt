@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { redirect } from "next/navigation";
 
-export default function MinhasComissoesPage() {
-  return <PlaceholderPage basePath="/portal" title="Minhas Comissões" />;
+export default function Page() {
+  redirect("/portal/comissoes/comissoes-e-desempenho");
 }

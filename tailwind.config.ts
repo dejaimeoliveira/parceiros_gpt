@@ -52,6 +52,16 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        brand: {
+          primary: "rgb(var(--brand-primary) / <alpha-value>)",
+          "primary-hover": "rgb(var(--brand-primary-hover) / <alpha-value>)",
+          dark: "rgb(var(--brand-dark) / <alpha-value>)",
+          background: "rgb(var(--brand-background) / <alpha-value>)",
+          surface: "rgb(var(--brand-surface) / <alpha-value>)",
+          text: "rgb(var(--brand-text) / <alpha-value>)",
+          "text-muted": "rgb(var(--brand-text-muted) / <alpha-value>)",
+          border: "rgb(var(--brand-border) / <alpha-value>)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -101,9 +101,9 @@ const arguments_: Argument[] = [
     title: "6. Experiência e confiança",
     body: (
       <>
-        A Catedral possui <strong className="font-semibold text-slate-900">mais de 17 anos de
+        A Catedral possui <strong className="font-semibold text-brand-text">mais de 17 anos de
         experiência</strong> em automação comercial e atende{" "}
-        <strong className="font-semibold text-slate-900">mais de 2.000 clientes ativos</strong>. É
+        <strong className="font-semibold text-brand-text">mais de 2.000 clientes ativos</strong>. É
         uma solução construída a partir da experiência prática com empresas que utilizam automação
         comercial diariamente.
       </>
@@ -133,9 +133,9 @@ const perguntas = [
 
 function QuoteBlock({ label, quote }: { label: string; quote: string }) {
   return (
-    <div className="mt-3 rounded-xl border-l-4 border-slate-300 bg-slate-50 px-4 py-3">
-      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</p>
-      <p className="mt-1 text-sm italic text-slate-700">&ldquo;{quote}&rdquo;</p>
+    <div className="mt-3 rounded-xl border-l-4 border-brand-border bg-brand-background px-4 py-3">
+      <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">{label}</p>
+      <p className="mt-1 text-sm italic text-brand-text-muted">&ldquo;{quote}&rdquo;</p>
     </div>
   );
 }
@@ -143,25 +143,25 @@ function QuoteBlock({ label, quote }: { label: string; quote: string }) {
 export function ArgumentosDeVenda({ basePath }: { basePath: string }) {
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">
           Material de Vendas
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">Argumentos de Venda</h1>
-        <p className="mt-4 max-w-2xl text-base text-slate-600">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">Argumentos de Venda</h1>
+        <p className="mt-4 max-w-2xl text-base text-brand-text-muted">
           Você não precisa ser especialista em sistemas para indicar um cliente para a Catedral. Seu
           objetivo é identificar empresas que possam se beneficiar de uma boa solução de automação
           comercial, apresentar brevemente o Sistema Catedral e informar que um consultor da
           Catedral entrará em contato para fazer uma demonstração e explicar todos os detalhes.
         </p>
-        <p className="mt-2 max-w-2xl text-sm text-slate-500">
+        <p className="mt-2 max-w-2xl text-sm text-brand-text-muted">
           Nesta página você encontra alguns argumentos que podem ajudá-lo nessa primeira conversa.
         </p>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">O que é o Sistema Catedral?</h2>
-        <p className="mt-3 max-w-2xl text-sm text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">O que é o Sistema Catedral?</h2>
+        <p className="mt-3 max-w-2xl text-sm text-brand-text-muted">
           O Sistema Catedral é uma solução completa de automação comercial que integra as
           principais áreas da empresa:
         </p>
@@ -174,35 +174,35 @@ export function ArgumentosDeVenda({ basePath }: { basePath: string }) {
             "relatórios gerenciais",
             "integração com equipamentos e periféricos",
           ].map((item) => (
-            <li key={item} className="flex items-center gap-2 text-sm text-slate-700">
+            <li key={item} className="flex items-center gap-2 text-sm text-brand-text-muted">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
               {item}
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm text-slate-600">
+        <p className="mt-4 text-sm text-brand-text-muted">
           O objetivo é facilitar a operação diária e dar ao empresário mais controle sobre o
           negócio.
         </p>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Principais argumentos de venda</h2>
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Principais argumentos de venda</h2>
         <div className="mt-6 space-y-6">
           {arguments_.map((arg) => (
-            <div key={arg.title} className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+            <div key={arg.title} className="flex gap-4 rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
                 <arg.icon className="h-5 w-5" />
               </div>
               <div className="flex-1">
-                <h3 className="text-base font-semibold text-slate-900">{arg.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{arg.body}</p>
+                <h3 className="text-base font-semibold text-brand-text">{arg.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-brand-text-muted">{arg.body}</p>
 
                 {arg.benefits ? (
                   <ul className="mt-3 grid gap-2 sm:grid-cols-2">
                     {arg.benefits.map((benefit) => (
-                      <li key={benefit} className="flex items-center gap-2 text-sm text-slate-700">
-                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+                      <li key={benefit} className="flex items-center gap-2 text-sm text-brand-text-muted">
+                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
                         {benefit}
                       </li>
                     ))}
@@ -213,41 +213,41 @@ export function ArgumentosDeVenda({ basePath }: { basePath: string }) {
                   <QuoteBlock label={arg.highlightLabel} quote={arg.highlightQuote} />
                 ) : null}
 
-                {arg.note ? <p className="mt-3 text-sm text-slate-500">{arg.note}</p> : null}
+                {arg.note ? <p className="mt-3 text-sm text-brand-text-muted">{arg.note}</p> : null}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
             <Store className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Para quais empresas posso oferecer?</h2>
+          <h2 className="text-2xl font-bold text-brand-text">Para quais empresas posso oferecer?</h2>
         </div>
-        <p className="mt-3 text-sm text-slate-600">O Sistema Catedral atende diversos segmentos, entre eles:</p>
+        <p className="mt-3 text-sm text-brand-text-muted">O Sistema Catedral atende diversos segmentos, entre eles:</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {segmentos.map((segmento) => (
             <span
               key={segmento}
-              className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-700"
+              className="rounded-full border border-brand-border bg-brand-background px-3 py-1.5 text-sm text-brand-text-muted"
             >
               {segmento}
             </span>
           ))}
         </div>
 
-        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-          <h3 className="text-base font-semibold text-slate-900">
+        <div className="mt-6 rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+          <h3 className="text-base font-semibold text-brand-text">
             Argumentos específicos para bares e restaurantes
           </h3>
-          <p className="mt-2 text-sm text-slate-600">
+          <p className="mt-2 text-sm text-brand-text-muted">
             Se você estiver conversando com um proprietário de bar ou restaurante, pergunte como ele
             controla atualmente: mesas, comandas, pedidos, caixa, estoque e financeiro.
           </p>
-          <p className="mt-2 text-sm text-slate-600">
+          <p className="mt-2 text-sm text-brand-text-muted">
             O Sistema Catedral integra pedidos por mesa, comandas e frente de caixa. Além disso, a
             Catedral possui soluções complementares para o segmento, como atendimento por
             aplicativo, autoatendimento e cardápio digital.
@@ -255,79 +255,79 @@ export function ArgumentosDeVenda({ basePath }: { basePath: string }) {
         </div>
       </div>
 
-      <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Não tente fazer a venda sozinho</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-700">
+      <div className="rounded-3xl border border-brand-primary/30 bg-brand-primary/10 p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Não tente fazer a venda sozinho</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           O parceiro não precisa conhecer todos os recursos do Sistema Catedral nem responder
           perguntas técnicas. Seu papel é despertar o interesse do possível cliente.
         </p>
-        <p className="mt-2 text-sm text-slate-600">Quando perceber uma oportunidade, você pode dizer:</p>
+        <p className="mt-2 text-sm text-brand-text-muted">Quando perceber uma oportunidade, você pode dizer:</p>
         <QuoteBlock
           label="Sugestão de abordagem"
           quote="Eu conheço uma empresa de automação comercial chamada Catedral. Eles atendem mais de 2.000 clientes e têm uma solução completa para vendas, estoque e financeiro. Se você quiser, posso pedir para um consultor entrar em contato e fazer uma demonstração sem compromisso."
         />
-        <p className="mt-3 text-sm text-slate-600">
-          Depois, registre a empresa em <strong className="font-semibold text-slate-900">Indicar Cliente</strong>.
+        <p className="mt-3 text-sm text-brand-text-muted">
+          Depois, registre a empresa em <strong className="font-semibold text-brand-text">Indicar Cliente</strong>.
           A equipe comercial da Catedral dará continuidade ao atendimento.
         </p>
         <div className="mt-5">
           <Link
             href={`${basePath}/indicacoes/nova`}
-            className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+            className="inline-flex items-center justify-center rounded-xl bg-brand-primary px-5 py-3 text-sm font-semibold text-brand-dark shadow-sm transition hover:bg-brand-primary-hover"
           >
             + Indicar novo cliente
           </Link>
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
             <Target className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Perguntas que ajudam a identificar oportunidades</h2>
+          <h2 className="text-2xl font-bold text-brand-text">Perguntas que ajudam a identificar oportunidades</h2>
         </div>
         <ul className="mt-4 space-y-2">
           {perguntas.map((pergunta) => (
-            <li key={pergunta} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+            <li key={pergunta} className="flex items-start gap-2 rounded-xl border border-brand-border bg-brand-background px-4 py-3 text-sm text-brand-text-muted">
               <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
               {pergunta}
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm text-slate-500">
+        <p className="mt-4 text-sm text-brand-text-muted">
           Você não precisa fazer todas essas perguntas. Uma conversa natural é suficiente para
           descobrir se existe interesse.
         </p>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">O objetivo é conseguir uma demonstração</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">O objetivo é conseguir uma demonstração</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Você não precisa fechar a venda. Seu principal objetivo é conseguir que o possível cliente
           aceite conversar com um consultor da Catedral. A equipe comercial fará a apresentação
           completa, demonstração do sistema, levantamento das necessidades e negociação.
         </p>
-        <p className="mt-2 text-sm text-slate-600">Quando houver interesse, avise:</p>
+        <p className="mt-2 text-sm text-brand-text-muted">Quando houver interesse, avise:</p>
         <QuoteBlock
           label="Sugestão de encerramento"
           quote="Vou registrar sua empresa e pedir para um consultor da Catedral entrar em contato com você."
         />
-        <p className="mt-3 text-sm text-slate-600">
-          Depois acesse <strong className="font-semibold text-slate-900">Indicar Cliente</strong> no
+        <p className="mt-3 text-sm text-brand-text-muted">
+          Depois acesse <strong className="font-semibold text-brand-text">Indicar Cliente</strong> no
           Portal do Parceiro e registre a indicação.
         </p>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-slate-900 p-6 text-center shadow-sm sm:p-10">
+      <div className="rounded-3xl border border-brand-border bg-brand-dark p-6 text-center shadow-sm sm:p-10">
         <h2 className="text-2xl font-bold text-white sm:text-3xl">Lembre-se</h2>
-        <div className="mx-auto mt-5 flex max-w-xl flex-col gap-2 text-base font-medium text-slate-200">
+        <div className="mx-auto mt-5 flex max-w-xl flex-col gap-2 text-base font-medium text-white/80">
           <p>Você identifica a oportunidade.</p>
           <p>A Catedral apresenta a solução.</p>
           <p>A equipe comercial negocia.</p>
           <p>O cliente contrata.</p>
         </div>
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-slate-300">
+        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/70">
           E você recebe comissão recorrente enquanto o cliente indicado permanecer ativo e pagando
           suas mensalidades.
         </p>

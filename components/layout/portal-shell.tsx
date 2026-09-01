@@ -14,7 +14,6 @@ import {
   PackageOpen,
   ShieldCheck,
   Target,
-  TrendingUp,
   UserRound,
   X,
 } from "lucide-react";
@@ -68,6 +67,7 @@ function getCurrentTitle(pathname: string, basePath: string) {
     "nova": "Indicar Cliente",
     comissoes: "Comissões",
     "minhas-comissoes": "Minhas Comissões",
+    "comissoes-e-desempenho": "Comissões e Desempenho",
     "como-funcionam": "Como Funcionam as Comissões",
     "material-de-vendas": "Material de Vendas",
     videos: "Vídeos",
@@ -140,7 +140,7 @@ export function PortalShell({
         label: "Comissões",
         icon: BriefcaseBusiness,
         items: [
-          { label: "Minhas Comissões", href: `${basePath}/comissoes/minhas-comissoes` },
+          { label: "Comissões e Desempenho", href: `${basePath}/comissoes/comissoes-e-desempenho` },
           { label: "Como Funcionam as Comissões", href: `${basePath}/comissoes/como-funcionam` },
         ],
       },
@@ -171,7 +171,6 @@ export function PortalShell({
           { label: "Academia Catedral", href: `${basePath}/treinamentos/academia-catedral` },
         ],
       },
-      { id: "desempenho", label: "Meu Desempenho", href: `${basePath}/meu-desempenho`, icon: TrendingUp },
       {
         id: "central",
         label: "Central do Parceiro",
@@ -197,7 +196,7 @@ export function PortalShell({
     const triggerContent = (
       <div className="flex w-full items-center justify-between gap-2">
         <span className="flex items-center gap-2">
-          <group.icon className="h-4 w-4" />
+          <group.icon className={cn("h-4 w-4", isActive && "text-brand-primary")} />
           <span>{group.label}</span>
         </span>
         {hasItems ? <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} /> : null}
@@ -210,10 +209,10 @@ export function PortalShell({
           key={group.id}
           href={group.href ?? basePath}
           className={cn(
-            "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+            "flex items-center gap-3 rounded-xl border-l-2 px-3 py-2.5 text-sm font-medium transition-colors",
             isActive
-              ? "bg-slate-900 text-white shadow-sm"
-              : "text-slate-700 hover:bg-slate-100 hover:text-slate-900",
+              ? "border-brand-primary bg-brand-primary/10 text-brand-text shadow-sm"
+              : "border-transparent text-brand-text-muted hover:bg-brand-background hover:text-brand-text",
           )}
         >
           {triggerContent}
@@ -229,13 +228,15 @@ export function PortalShell({
             setOpenGroups((prev) => ({ ...prev, [group.id]: !prev[group.id] }));
           }}
           className={cn(
-            "flex w-full items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition-colors",
-            isActive ? "bg-slate-900 text-white shadow-sm" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900",
+            "flex w-full items-center justify-between gap-2 rounded-xl border-l-2 px-3 py-2.5 text-left text-sm font-medium transition-colors",
+            isActive
+              ? "border-brand-primary bg-brand-primary/10 text-brand-text shadow-sm"
+              : "border-transparent text-brand-text-muted hover:bg-brand-background hover:text-brand-text",
           )}
           aria-expanded={isOpen}
         >
           <span className="flex items-center gap-2">
-            <group.icon className="h-4 w-4" />
+            <group.icon className={cn("h-4 w-4", isActive && "text-brand-primary")} />
             {group.label}
           </span>
           <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
@@ -252,8 +253,8 @@ export function PortalShell({
                   className={cn(
                     "block rounded-lg px-3 py-2 text-sm transition-colors",
                     isItemActive
-                      ? "bg-slate-100 font-medium text-slate-900"
-                      : "text-slate-600 hover:bg-slate-100 hover:text-slate-900",
+                      ? "bg-brand-primary/10 font-medium text-brand-text"
+                      : "text-brand-text-muted hover:bg-brand-background hover:text-brand-text",
                   )}
                 >
                   {item.label}
@@ -267,14 +268,14 @@ export function PortalShell({
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-50 text-slate-900">
-      <aside className="hidden w-72 shrink-0 border-r border-slate-200 bg-white lg:flex lg:flex-col">
-        <div className="border-b border-slate-200 px-6 py-6">
+    <div className="flex min-h-screen bg-brand-background text-brand-text">
+      <aside className="hidden w-72 shrink-0 border-r border-brand-border bg-white lg:flex lg:flex-col">
+        <div className="border-b border-brand-border px-6 py-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 text-sm font-bold text-white">C</div>
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-dark text-sm font-bold text-white">C</div>
             <div>
-              <div className="text-xl font-bold tracking-tight text-slate-900">Catedral</div>
-              <div className="text-xs font-medium uppercase tracking-[0.12em] text-slate-500">Portal de Parceiros</div>
+              <div className="text-xl font-bold tracking-tight text-brand-text">Catedral</div>
+              <div className="text-xs font-medium uppercase tracking-[0.12em] text-brand-text-muted">Portal de Parceiros</div>
             </div>
           </div>
         </div>
@@ -283,13 +284,13 @@ export function PortalShell({
           {groups.map(renderGroup)}
         </nav>
 
-        <div className="border-t border-slate-200 px-4 py-4">
+        <div className="border-t border-brand-border px-4 py-4">
           <div className="space-y-2 pt-1">
             <Link
               href={`${basePath}/meu-cadastro`}
               className={cn(
-                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900",
-                pathname.startsWith(`${basePath}/meu-cadastro`) && "bg-slate-100 text-slate-900",
+                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-brand-text-muted transition-colors hover:bg-brand-background hover:text-brand-text",
+                pathname.startsWith(`${basePath}/meu-cadastro`) && "bg-brand-background text-brand-text",
               )}
             >
               <UserRound className="h-4 w-4" />
@@ -298,31 +299,31 @@ export function PortalShell({
             <Link
               href={`${basePath}/alterar-senha`}
               className={cn(
-                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900",
-                pathname.startsWith(`${basePath}/alterar-senha`) && "bg-slate-100 text-slate-900",
+                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-brand-text-muted transition-colors hover:bg-brand-background hover:text-brand-text",
+                pathname.startsWith(`${basePath}/alterar-senha`) && "bg-brand-background text-brand-text",
               )}
             >
               <ShieldCheck className="h-4 w-4" />
               Alterar Senha
             </Link>
             <div className="pt-1">
-              <LogoutButton variant="outline" className="w-full justify-start border-slate-200 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900" />
+              <LogoutButton variant="outline" className="w-full justify-start border-brand-border bg-white text-brand-text-muted hover:bg-brand-background hover:text-brand-text" />
             </div>
           </div>
         </div>
       </aside>
 
       {isMenuOpen ? (
-        <div className="fixed inset-0 z-40 bg-slate-950/40 lg:hidden" onClick={() => setIsMenuOpen(false)} />
+        <div className="fixed inset-0 z-40 bg-brand-dark/40 lg:hidden" onClick={() => setIsMenuOpen(false)} />
       ) : null}
 
-      <div className={cn("fixed inset-y-0 left-0 z-50 w-72 transform border-r border-slate-200 bg-white transition-transform duration-200 lg:hidden", isMenuOpen ? "translate-x-0" : "-translate-x-full")}>
-        <div className="flex items-center justify-between border-b border-slate-200 px-4 py-4">
+      <div className={cn("fixed inset-y-0 left-0 z-50 w-72 transform border-r border-brand-border bg-white transition-transform duration-200 lg:hidden", isMenuOpen ? "translate-x-0" : "-translate-x-full")}>
+        <div className="flex items-center justify-between border-b border-brand-border px-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-sm font-bold text-white">C</div>
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-dark text-sm font-bold text-white">C</div>
             <div>
-              <div className="text-lg font-bold text-slate-900">Catedral</div>
-              <div className="text-[10px] uppercase tracking-[0.16em] text-slate-500">Parceiros</div>
+              <div className="text-lg font-bold text-brand-text">Catedral</div>
+              <div className="text-[10px] uppercase tracking-[0.16em] text-brand-text-muted">Parceiros</div>
             </div>
           </div>
           <Button type="button" variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)} aria-label="Fechar menu">
@@ -334,17 +335,17 @@ export function PortalShell({
           {groups.map(renderGroup)}
         </nav>
 
-        <div className="border-t border-slate-200 px-4 py-4 space-y-2">
-          <Link href={`${basePath}/meu-cadastro`} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Meu Cadastro</Link>
-          <Link href={`${basePath}/alterar-senha`} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Alterar Senha</Link>
+        <div className="border-t border-brand-border px-4 py-4 space-y-2">
+          <Link href={`${basePath}/meu-cadastro`} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-brand-text-muted hover:bg-brand-background">Meu Cadastro</Link>
+          <Link href={`${basePath}/alterar-senha`} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-brand-text-muted hover:bg-brand-background">Alterar Senha</Link>
           <div className="pt-1">
-            <LogoutButton variant="outline" className="w-full justify-start border-slate-200 bg-white text-slate-700 hover:bg-slate-100" />
+            <LogoutButton variant="outline" className="w-full justify-start border-brand-border bg-white text-brand-text-muted hover:bg-brand-background" />
           </div>
         </div>
       </div>
 
       <div className="flex min-h-screen flex-1 flex-col">
-        <header className="border-b border-slate-200 bg-white/85 backdrop-blur-sm">
+        <header className="border-b border-brand-border bg-white/85 backdrop-blur-sm">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-3">
               <Button
@@ -358,8 +359,8 @@ export function PortalShell({
                 <Menu className="h-4 w-4" />
               </Button>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Portal</p>
-                <h1 className="text-xl font-bold text-slate-900">{currentTitle}</h1>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">Portal</p>
+                <h1 className="text-xl font-bold text-brand-text">{currentTitle}</h1>
               </div>
             </div>
 
@@ -372,9 +373,9 @@ export function PortalShell({
                 <DropdownMenuTrigger asChild>
                   <button
                     type="button"
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-2 py-1.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-100"
+                    className="inline-flex items-center gap-2 rounded-full border border-brand-border bg-brand-background px-2 py-1.5 text-sm font-medium text-brand-text-muted shadow-sm transition hover:border-brand-primary/40 hover:bg-brand-background"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-primary text-xs font-semibold text-brand-dark">
                       {userName?.trim()?.charAt(0)?.toUpperCase() || "P"}
                     </div>
                     <span className="hidden sm:inline">{userName}</span>

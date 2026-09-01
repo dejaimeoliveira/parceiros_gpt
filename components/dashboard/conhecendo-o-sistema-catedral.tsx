@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   Beef,
+  GraduationCap,
   Handshake,
   HelpCircle,
   LayoutDashboard,
@@ -9,8 +10,10 @@ import {
   Pizza,
   ShieldOff,
   Shirt,
+  Table2,
   UtensilsCrossed,
   Wine,
+  Workflow,
   Wrench,
 } from "lucide-react";
 
@@ -134,6 +137,16 @@ const segmentos = [
   },
 ];
 
+const comparacaoSegmentos = [
+  { nome: "Bares e Restaurantes", necessidade: "Mesas, comandas, produção e agilidade" },
+  { nome: "Açougues e Mercados", necessidade: "Balanças, produtos e estoque" },
+  { nome: "Pizzarias e Deliveries", necessidade: "Picos de pedidos, produção e entrega" },
+  { nome: "Lojas de Roupas e Calçados", necessidade: "Produtos, clientes e giro de estoque" },
+  { nome: "Pet Shops e Agropecuárias", necessidade: "Produtos, serviços e estoque" },
+  { nome: "Oficinas e Serviços", necessidade: "Ordens e acompanhamento de serviços" },
+  { nome: "Distribuidoras de Bebidas", necessidade: "Estoque, pedidos e entregas" },
+];
+
 const emComum = [
   { title: "Vender", body: "Registrar operações com agilidade." },
   { title: "Controlar", body: "Acompanhar produtos e estoque." },
@@ -180,45 +193,45 @@ export function ConhecendoOSistemaCatedral({ basePath }: { basePath: string }) {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">
           Programa de Parceiros Catedral
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">
           Conhecendo o Sistema Catedral
         </h1>
-        <p className="mt-2 max-w-2xl text-base font-medium text-slate-700">
+        <p className="mt-2 max-w-2xl text-base font-medium text-brand-text-muted">
           Entenda o que é o sistema, como ele ajuda na gestão de uma empresa e quais segmentos podem
           utilizá-lo.
         </p>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           O Sistema Catedral é uma solução de automação comercial que integra vendas, estoque e
           financeiro. Ele ajuda empresas a organizar a operação, reduzir tarefas manuais, controlar
           melhor produtos e movimentações e obter informações para tomar decisões com mais
           segurança.
         </p>
 
-        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-900 p-6 text-center text-white">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">Sistema Catedral</p>
+        <div className="mt-6 rounded-2xl border border-brand-border bg-brand-dark p-6 text-center text-white">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Sistema Catedral</p>
           <p className="mt-2 text-xl font-bold sm:text-2xl">Vendas + Estoque + Financeiro</p>
-          <p className="mt-1 text-sm text-slate-300">Automação comercial para organizar e controlar a operação.</p>
+          <p className="mt-1 text-sm text-white/70">Automação comercial para organizar e controlar a operação.</p>
         </div>
       </div>
 
       {/* O que é */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">O que é o Sistema Catedral?</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">O que é o Sistema Catedral?</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Um software de automação comercial e gestão para operações reais de comércio e serviços.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {pilares.map((pilar) => (
-            <div key={pilar.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <h3 className="text-base font-semibold text-slate-900">{pilar.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{pilar.resumo}</p>
+            <div key={pilar.title} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <h3 className="text-base font-semibold text-brand-text">{pilar.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-brand-text-muted">{pilar.resumo}</p>
               <ul className="mt-3 space-y-1.5">
                 {pilar.itens.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+                  <li key={item} className="flex items-start gap-2 text-sm text-brand-text-muted">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
                     {item}
                   </li>
@@ -229,60 +242,97 @@ export function ConhecendoOSistemaCatedral({ basePath }: { basePath: string }) {
         </div>
       </div>
 
+      {/* A força está na integração */}
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
+            <Workflow className="h-5 w-5" />
+          </div>
+          <h2 className="text-2xl font-bold text-brand-text">A força está na integração</h2>
+        </div>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
+          Quando vendas, estoque e financeiro trabalham de forma integrada, a empresa reduz
+          controles paralelos e retrabalho e passa a ter informações mais consistentes para
+          administrar a operação.
+        </p>
+        <div className="mt-6 flex flex-col items-center gap-2">
+          <span className="rounded-full border border-brand-border bg-brand-background px-4 py-1.5 text-xs font-semibold text-brand-text-muted">
+            Venda
+          </span>
+          <span className="text-brand-text-muted/40">↓</span>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <span className="rounded-full border border-brand-border bg-brand-background px-4 py-1.5 text-xs font-semibold text-brand-text-muted">
+              Estoque
+            </span>
+            <span className="rounded-full border border-brand-border bg-brand-background px-4 py-1.5 text-xs font-semibold text-brand-text-muted">
+              Financeiro
+            </span>
+          </div>
+          <span className="text-brand-text-muted/40">↓</span>
+          <span className="rounded-full border border-brand-border bg-brand-background px-4 py-1.5 text-xs font-semibold text-brand-text-muted">
+            Relatórios
+          </span>
+          <span className="text-brand-text-muted/40">↓</span>
+          <span className="rounded-full bg-brand-dark px-4 py-1.5 text-xs font-semibold text-white">
+            Gestão
+          </span>
+        </div>
+      </div>
+
       {/* Para que serve */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Para que serve?</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Para que serve?</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Quando vendas, estoque e financeiro trabalham de forma integrada, o empresário reduz
           retrabalho e passa a ter uma visão mais clara do que está acontecendo no negócio.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {beneficios.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{item.body}</p>
+            <div key={item.title} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <h3 className="text-sm font-semibold text-brand-text">{item.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-brand-text-muted">{item.body}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Offline */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
             <ShieldOff className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">A operação não precisa parar quando a internet cai</h2>
+          <h2 className="text-2xl font-bold text-brand-text">A operação não precisa parar quando a internet cai</h2>
         </div>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Uma característica importante do Sistema Catedral é continuar operando mesmo quando há
           falha de conexão. Isso é especialmente relevante para empresas que não podem interromper o
           caixa ou o atendimento.
         </p>
-        <div className="mt-5 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">Offline</p>
-          <p className="mt-1 text-base font-semibold text-slate-900">A internet caiu? A operação pode continuar funcionando.</p>
+        <div className="mt-5 rounded-2xl border border-brand-primary/30 bg-brand-primary/10 p-5 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text">Offline</p>
+          <p className="mt-1 text-base font-semibold text-brand-text">A internet caiu? A operação pode continuar funcionando.</p>
         </div>
       </div>
 
       {/* Suporte humano */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
             <Handshake className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Tecnologia com suporte humano</h2>
+          <h2 className="text-2xl font-bold text-brand-text">Tecnologia com suporte humano</h2>
         </div>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Como o sistema participa da operação diária da empresa, a Catedral mantém suporte humano
           especializado para apoiar seus clientes.
         </p>
       </div>
 
       {/* Segmentos - intro */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Cada segmento trabalha de um jeito</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Cada segmento trabalha de um jeito</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Vendas, estoque e financeiro são necessidades comuns a muitas empresas, mas cada segmento
           possui uma rotina própria. Um restaurante não trabalha como uma oficina; uma loja de
           roupas não possui as mesmas necessidades de um açougue. Por isso, o parceiro deve primeiro
@@ -294,47 +344,47 @@ export function ConhecendoOSistemaCatedral({ basePath }: { basePath: string }) {
       </div>
 
       {/* Segmentos - grid */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Segmentos atendidos</h2>
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Segmentos atendidos</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {segmentos.map((segmento) => (
             <div
               key={segmento.nome}
-              className="flex flex-col justify-end rounded-2xl bg-gradient-to-br from-slate-900 to-slate-700 p-5 text-white shadow-sm"
+              className="flex flex-col justify-end rounded-2xl bg-gradient-to-br from-brand-dark to-brand-text-muted p-5 text-white shadow-sm"
             >
               <segmento.icon className="h-7 w-7" />
               <h3 className="mt-3 text-sm font-semibold">{segmento.nome}</h3>
-              <p className="mt-1.5 text-xs leading-relaxed text-slate-200">{segmento.resumo}</p>
+              <p className="mt-1.5 text-xs leading-relaxed text-white/80">{segmento.resumo}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-8 space-y-4">
           {segmentos.map((segmento) => (
-            <div key={segmento.nome} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+            <div key={segmento.nome} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
                   <segmento.icon className="h-4 w-4" />
                 </div>
-                <h3 className="text-base font-semibold text-slate-900">{segmento.nome}</h3>
+                <h3 className="text-base font-semibold text-brand-text">{segmento.nome}</h3>
               </div>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Destaques</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">Destaques</p>
                   <ul className="mt-2 flex flex-wrap gap-1.5">
                     {segmento.destaques.map((item) => (
-                      <li key={item} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
+                      <li key={item} className="rounded-full border border-brand-border bg-white px-3 py-1 text-xs text-brand-text-muted">
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Perguntas para prospecção</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-text-muted">Perguntas para prospecção</p>
                   <ul className="mt-2 space-y-1.5">
                     {segmento.perguntas.map((pergunta) => (
-                      <li key={pergunta} className="flex items-start gap-2 text-sm text-slate-700">
-                        <HelpCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
+                      <li key={pergunta} className="flex items-start gap-2 text-sm text-brand-text-muted">
+                        <HelpCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-text-muted" />
                         {pergunta}
                       </li>
                     ))}
@@ -346,60 +396,98 @@ export function ConhecendoOSistemaCatedral({ basePath }: { basePath: string }) {
         </div>
       </div>
 
-      {/* Em comum */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Negócios diferentes, necessidades em comum</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {emComum.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{item.body}</p>
+      {/* Comparação rápida */}
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
+            <Table2 className="h-5 w-5" />
+          </div>
+          <h2 className="text-2xl font-bold text-brand-text">Comparação rápida</h2>
+        </div>
+
+        <div className="mt-6 hidden overflow-x-auto sm:block">
+          <table className="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b border-brand-border">
+                <th className="py-2 pr-4 font-semibold text-brand-text">Segmento</th>
+                <th className="py-2 font-semibold text-brand-text">Necessidade em destaque</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparacaoSegmentos.map((item) => (
+                <tr key={item.nome} className="border-b border-brand-border/60 last:border-0">
+                  <td className="py-2.5 pr-4 font-medium text-brand-text">{item.nome}</td>
+                  <td className="py-2.5 text-brand-text-muted">{item.necessidade}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-6 space-y-3 sm:hidden">
+          {comparacaoSegmentos.map((item) => (
+            <div key={item.nome} className="rounded-2xl border border-brand-border bg-brand-background/60 p-4">
+              <p className="text-sm font-semibold text-brand-text">{item.nome}</p>
+              <p className="mt-1 text-sm text-brand-text-muted">{item.necessidade}</p>
             </div>
           ))}
         </div>
-        <p className="mt-5 text-sm font-semibold text-slate-900">
+      </div>
+
+      {/* Em comum */}
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Negócios diferentes, necessidades em comum</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {emComum.map((item) => (
+            <div key={item.title} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <h3 className="text-sm font-semibold text-brand-text">{item.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-brand-text-muted">{item.body}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-5 text-sm font-semibold text-brand-text">
           O segmento muda, mas a necessidade de controle permanece.
         </p>
       </div>
 
       {/* Recursos complementares */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
             <MonitorSmartphone className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Recursos complementares</h2>
+          <h2 className="text-2xl font-bold text-brand-text">Recursos complementares</h2>
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {recursos.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{item.body}</p>
+            <div key={item.title} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <h3 className="text-sm font-semibold text-brand-text">{item.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-brand-text-muted">{item.body}</p>
             </div>
           ))}
         </div>
-        <p className="mt-4 text-sm text-slate-600">
+        <p className="mt-4 text-sm text-brand-text-muted">
           Consulte disponibilidade e condições com a equipe Catedral.
         </p>
       </div>
 
       {/* Como apresentar */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
             <LayoutDashboard className="h-5 w-5" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Não comece pelas funcionalidades</h2>
+          <h2 className="text-2xl font-bold text-brand-text">Não comece pelas funcionalidades</h2>
         </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-2">
           {fluxoApresentacao.map((etapa, index) => (
             <div key={etapa} className="flex items-center gap-2">
-              <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700">
+              <span className="rounded-full border border-brand-border bg-brand-background px-3 py-1.5 text-xs font-semibold text-brand-text-muted">
                 {index + 1}. {etapa}
               </span>
               {index < fluxoApresentacao.length - 1 ? (
-                <span className="text-slate-300">→</span>
+                <span className="text-brand-text-muted/40">→</span>
               ) : null}
             </div>
           ))}
@@ -415,7 +503,7 @@ export function ConhecendoOSistemaCatedral({ basePath }: { basePath: string }) {
             &ldquo;Hoje vocês conseguem saber com facilidade o que está faltando ou sobrando no
             estoque?&rdquo;
           </div>
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+          <div className="rounded-xl border border-brand-border bg-brand-background px-4 py-3 text-sm text-brand-text-muted">
             <span className="font-semibold">Depois de identificar a necessidade: </span>
             &ldquo;O Sistema Catedral possui controle integrado de estoque. Posso pedir para um
             consultor mostrar como funciona na prática.&rdquo;
@@ -424,55 +512,70 @@ export function ConhecendoOSistemaCatedral({ basePath }: { basePath: string }) {
       </div>
 
       {/* Argumentos */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-bold text-slate-900">Argumentos que o parceiro deve lembrar</h2>
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-2xl font-bold text-brand-text">Argumentos que o parceiro deve lembrar</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {argumentos.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-              <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{item.body}</p>
+            <div key={item.title} className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+              <h3 className="text-sm font-semibold text-brand-text">{item.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-brand-text-muted">{item.body}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* O que não prometer */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-xl font-bold text-slate-900">O que o parceiro não deve prometer</h2>
-        <p className="mt-2 text-sm text-slate-600">Sem confirmação da equipe Catedral, evite afirmar:</p>
+      {/* O parceiro não precisa saber tudo */}
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
+            <GraduationCap className="h-5 w-5" />
+          </div>
+          <h2 className="text-2xl font-bold text-brand-text">Você não precisa ser um técnico do Sistema Catedral</h2>
+        </div>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
+          O parceiro deve identificar oportunidades e despertar interesse. Demonstrações técnicas,
+          detalhes de implantação e negociação são responsabilidade da equipe Catedral.
+        </p>
+        <p className="mt-4 text-sm font-semibold text-brand-text">Sem confirmação da equipe Catedral, evite afirmar:</p>
         <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
           {naoPrometer.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+            <li key={item} className="flex items-start gap-2 text-sm text-brand-text-muted">
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
               {item}
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm text-slate-600">
-          Quando surgir uma pergunta técnica ou comercial que você não souber responder, informe que
-          um consultor da Catedral poderá esclarecer durante a demonstração.
+        <p className="mt-4 text-sm text-brand-text-muted">
+          Se não souber responder, oriente o potencial cliente a esclarecer a questão diretamente
+          com o consultor Catedral durante a demonstração.
         </p>
       </div>
 
       {/* CTA final */}
-      <div className="rounded-3xl border border-slate-200 bg-slate-900 p-6 text-center shadow-sm sm:p-10">
+      <div className="rounded-3xl border border-brand-border bg-brand-dark p-6 text-center shadow-sm sm:p-10">
         <h2 className="text-2xl font-bold text-white sm:text-3xl">
           Agora ficou mais fácil reconhecer uma oportunidade
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/70">
           Quando encontrar uma empresa que possa se beneficiar do Sistema Catedral, converse com o
           responsável, identifique a necessidade e registre a oportunidade no Portal.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Link
-            href={`${basePath}/indicacoes/nova`}
-            className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100"
+            href={`${basePath}/indicacoes/indicar-cliente`}
+            className="inline-flex items-center justify-center rounded-xl bg-brand-primary px-5 py-3 text-sm font-semibold text-brand-dark shadow-sm transition hover:bg-brand-primary-hover"
           >
             Indicar um cliente
           </Link>
           <Link
+            href={`${basePath}/treinamentos/como-vender-por-indicacao`}
+            className="inline-flex items-center justify-center rounded-xl border border-brand-primary/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark/90"
+          >
+            Como Vender por Indicação
+          </Link>
+          <Link
             href={`${basePath}/material-de-vendas/argumentos-de-venda`}
-            className="inline-flex items-center justify-center rounded-xl border border-slate-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="inline-flex items-center justify-center rounded-xl border border-brand-primary/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark/90"
           >
             Ver Argumentos de Venda
           </Link>
