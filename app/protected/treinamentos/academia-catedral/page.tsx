@@ -36,7 +36,7 @@ export default function AcademiaCatedralPage() {
           <p>
             Entre os temas que estamos preparando estão <strong className="font-semibold text-brand-text">administração do tempo,
             organização e produtividade, comunicação, abordagem de clientes, técnicas de vendas, negociação,
-            relacionamento</strong> e outras habilidades importantes para o desenvolvimento profissional e commercial.
+            relacionamento</strong> e outras habilidades importantes para o desenvolvimento profissional e comercial.
           </p>
 
           <p>

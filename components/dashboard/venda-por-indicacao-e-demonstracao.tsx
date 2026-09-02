@@ -4,6 +4,7 @@ import {
   Ban,
   Brain,
   BookOpen,
+  CalendarCheck,
   ClipboardCheck,
   Clock,
   Compass,
@@ -16,6 +17,7 @@ import {
   ListOrdered,
   MessageCircle,
   MessageSquare,
+  Presentation,
   Repeat,
   Scale,
   Search,
@@ -149,7 +151,7 @@ const fluxoCatedral = [
   "Você descobre uma necessidade",
   "Você gera interesse",
   "Você registra a indicação",
-  "A Catedral apresenta e negocia",
+  "A Catedral agenda e conduz a demonstração",
 ];
 
 const estruturaConversa = [
@@ -165,7 +167,21 @@ const estruturaConversa = [
   "Follow-up",
 ];
 
-export function ComoVenderPorIndicacao({ basePath }: { basePath: string }) {
+const seuPapelDemonstracao = [
+  "Garantir que o contato e as informações da indicação estejam corretos",
+  "Avisar o cliente de que um consultor da Catedral vai entrar em contato",
+  "Reforçar, em poucas palavras, a necessidade que motivou a indicação",
+  "Fazer follow-up depois, perguntando como foi a conversa",
+];
+
+const papelCatedralDemonstracao = [
+  "Agendar e conduzir a demonstração técnica do sistema",
+  "Adaptar a apresentação ao segmento e à necessidade do cliente",
+  "Esclarecer dúvidas técnicas e comerciais",
+  "Negociar preço, prazo e condições de contratação",
+];
+
+export function VendaPorIndicacaoEDemonstracao({ basePath }: { basePath: string }) {
   return (
     <div className="space-y-6">
       {/* Hero */}
@@ -174,11 +190,12 @@ export function ComoVenderPorIndicacao({ basePath }: { basePath: string }) {
           Programa de Parceiros Catedral
         </p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-text">
-          Como Vender por Indicação
+          Venda por Indicação e Demonstração
         </h1>
         <p className="mt-2 max-w-2xl text-base font-medium text-brand-text-muted">
           Prospecção, relacionamento, técnicas de vendas e princípios de comportamento humano para
-          transformar contatos em oportunidades.
+          transformar contatos em oportunidades — e o que acontece depois, quando a Catedral assume
+          a demonstração comercial.
         </p>
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
           Vender por indicação não significa pressionar amigos, conhecidos ou empresários para
@@ -898,6 +915,55 @@ export function ComoVenderPorIndicacao({ basePath }: { basePath: string }) {
           <p className="text-base font-semibold text-brand-text">
             Você indica. A Catedral vende. Você acompanha. Você ganha.
           </p>
+        </div>
+      </div>
+
+      {/* Demonstração comercial */}
+      <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-sm sm:p-8">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white">
+            <Presentation className="h-5 w-5" />
+          </div>
+          <h2 className="text-2xl font-bold text-brand-text">A demonstração comercial é o próximo passo</h2>
+        </div>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-brand-text-muted">
+          Depois que você registra a indicação, a equipe da Catedral agenda e conduz uma
+          demonstração comercial com o potencial cliente — mostrando, na prática, como o Sistema
+          Catedral resolve a necessidade que você identificou na conversa.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+            <div className="flex items-center gap-2">
+              <CalendarCheck className="h-4 w-4 text-brand-text-muted" />
+              <h3 className="text-sm font-semibold text-brand-text">O que você faz</h3>
+            </div>
+            <ul className="mt-3 space-y-1.5">
+              {seuPapelDemonstracao.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-brand-text-muted">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-brand-border bg-brand-background/60 p-5">
+            <div className="flex items-center gap-2">
+              <Presentation className="h-4 w-4 text-brand-text-muted" />
+              <h3 className="text-sm font-semibold text-brand-text">O que é papel da Catedral</h3>
+            </div>
+            <ul className="mt-3 space-y-1.5">
+              {papelCatedralDemonstracao.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-brand-text-muted">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-semibold text-amber-900">
+          Você não precisa conduzir nem participar da demonstração técnica. Seu papel é garantir
+          que ela aconteça com um cliente bem preparado e interessado.
         </div>
       </div>
 

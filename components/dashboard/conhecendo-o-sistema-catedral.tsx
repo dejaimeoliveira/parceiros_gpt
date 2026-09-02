@@ -568,10 +568,10 @@ export function ConhecendoOSistemaCatedral({ basePath }: { basePath: string }) {
             Indicar um cliente
           </Link>
           <Link
-            href={`${basePath}/treinamentos/como-vender-por-indicacao`}
+            href={`${basePath}/treinamentos/venda-por-indicacao-e-demonstracao`}
             className="inline-flex items-center justify-center rounded-xl border border-brand-primary/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark/90"
           >
-            Como Vender por Indicação
+            Venda por Indicação e Demonstração
           </Link>
           <Link
             href={`${basePath}/material-de-vendas/argumentos-de-venda`}

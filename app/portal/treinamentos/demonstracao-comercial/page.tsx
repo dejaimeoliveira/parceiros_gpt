@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/dashboard/placeholder-page";
+import { redirect } from "next/navigation";
 
-export default function DemonstracaoComercialPage() {
-  return <PlaceholderPage basePath="/portal" title="Demonstração Comercial" />;
+export default function Page() {
+  redirect("/portal/treinamentos/venda-por-indicacao-e-demonstracao");
 }

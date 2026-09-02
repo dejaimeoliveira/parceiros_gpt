@@ -1,5 +1,5 @@
-import { ComoVenderPorIndicacao } from "@/components/dashboard/como-vender-por-indicacao";
+import { redirect } from "next/navigation";
 
-export default function ComoVenderIndicacaoPage() {
-  return <ComoVenderPorIndicacao basePath="/portal" />;
+export default function Page() {
+  redirect("/portal/treinamentos/venda-por-indicacao-e-demonstracao");
 }
